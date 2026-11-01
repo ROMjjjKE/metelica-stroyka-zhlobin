@@ -1,0 +1,35 @@
+<script>
+(function(){
+  var chips=[].slice.call(document.querySelectorAll('.chip'));
+  var num=document.getElementById('countNum'), cap=document.getElementById('countCap');
+  var list=document.getElementById('picked'), call=document.getElementById('callBtn'), cp=document.getElementById('copyBtn');
+  var picked=[];
+  var forms=['этап выбран','этапа выбрано','этапов выбрано'];
+  function plural(n){ if(n%10===1&&n%100!==11) return 0; if(n%10>=2&&n%10<=4&&(n%100<10||n%100>=20)) return 1; return 2; }
+  function render(){
+    num.textContent=picked.length;
+    cap.textContent=picked.length? forms[plural(picked.length)] : 'ничего не выбрано';
+    list.innerHTML=picked.map(function(n){return '<li>'+n+'</li>'}).join('');
+    call.href = picked.length
+      ? 'tel:+375445375923'
+      : 'tel:+375445375923';
+  }
+  chips.forEach(function(b){
+    b.addEventListener('click',function(){
+      var on=b.getAttribute('aria-pressed')==='true';
+      b.setAttribute('aria-pressed', on?'false':'true');
+      var n=b.getAttribute('data-n');
+      var i=picked.indexOf(n);
+      if(on){ if(i>-1) picked.splice(i,1); } else if(i<0){ picked.push(n); }
+      render();
+    });
+  });
+  cp.addEventListener('click',function(){
+    var txt='Работы на объекте:\n'+(picked.length?picked.map(function(n,i){return (i+1)+'. '+n}).join('\n'):'—')+'\nЖлобин, ИП Метелица К. А. +375 44 537-59-23';
+    function done(){ cp.textContent='Скопировано'; setTimeout(function(){cp.textContent='Скопировать'},1600); }
+    if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(txt).then(done,function(){}); }
+    else { var t=document.createElement('textarea'); t.value=txt; document.body.appendChild(t); t.select(); try{document.execCommand('copy'); done();}catch(e){} t.remove(); }
+  });
+  render();
+})();
+</script>

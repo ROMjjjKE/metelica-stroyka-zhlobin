@@ -1,0 +1,29 @@
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cards article{background:var(--bg2);padding:clamp(18px,2.4vw,26px)}
+.cards .no{font-family:var(--f);font-size:.8rem;color:var(--mars-d);font-weight:600;display:block;margin-bottom:8px;font-variant-numeric:tabular-nums}
+.cards h3{margin-bottom:7px}
+.cards p{color:var(--ink2);font-size:.95rem}
+.steps{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,28px)}
+.steps li{border-top:2px solid var(--ink);padding-top:14px}
+.steps b{display:block;font-family:var(--f);font-size:1.05rem;margin-bottom:6px}
+.steps p{color:var(--ink2);font-size:.95rem}
+.faq{display:grid;gap:0;border-top:1px solid var(--line);margin-top:8px}
+.faq details{border-bottom:1px solid var(--line);padding:16px 0}
+.faq summary{font-family:var(--f);font-weight:600;font-size:1.03rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--mars);font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:"−"}
+.faq p{color:var(--ink2);font-size:.97rem;margin-top:10px;max-width:62ch}
+.cont{background:var(--ink);color:#e8e9ea;padding:clamp(48px,7vw,92px) 0}
+.cg{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,56px)}
+.cont h2{color:#fff;margin-bottom:14px}
+.cont p{color:#c3c7ca}
+.tel{display:block;font-family:var(--f);font-size:clamp(1.4rem,2.6vw,2rem);font-weight:600;color:#fff;margin:8px 0 18px;letter-spacing:-.01em}
+.cbox{border:1px solid rgba(255,255,255,.16);border-radius:var(--r);padding:20px}
+.cbox dl{display:grid;gap:11px}
+.cbox div{display:flex;justify-content:space-between;gap:14px;font-size:.95rem}
+.cbox dt{color:#a9aeb2}
+.cbox dd{font-weight:600;text-align:right;color:#fff}
+.ftr{padding:26px 0;font-size:.86rem;color:var(--ink3);border-top:1px solid var(--line)}
+.ftr .wrap{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between}
+@media (max-width:860px){.cg,.steps{grid-template-columns:1fr}.steps{gap:18px}}

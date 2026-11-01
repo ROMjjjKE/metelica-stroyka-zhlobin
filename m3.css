@@ -1,0 +1,14 @@
+.hero{padding:clamp(30px,5vw,58px) 0 clamp(24px,4vw,42px)}
+.hg{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(22px,3.6vw,48px);align-items:start}
+.hero h1{max-width:19ch;margin-bottom:18px}
+.lead{color:var(--ink2);font-size:1.09rem;max-width:54ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.note{margin-top:20px;font-size:.9rem;color:var(--ink3);max-width:50ch}
+.kv{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:var(--bg2)}
+.kv .t{padding:13px 18px;border-bottom:1px solid var(--line2);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3);font-weight:600}
+.kv dl{padding:6px 18px 14px}
+.kv .row{display:flex;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line2);font-size:.95rem}
+.kv .row:last-child{border-bottom:0}
+.kv dt{color:var(--ink3)}
+.kv dd{font-weight:600;text-align:right}
+@media (max-width:860px){.hg{grid-template-columns:1fr}}
